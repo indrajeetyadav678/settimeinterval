@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            background-color: rgb(43, 42, 42);
+        }
+
+        #typing {
+            font-size: 30px;
+            color: white;
+            margin-top: 40vh;
+        }
+
+        #typing::after {
+            content: "|";
+        }
+    </style>
+</head>
+
+<body onload="typingeffect()">
+    <div id="typing"></div>
+
+    <script>
+        let word = "";
+        let chal = 0;
+        let store = "We are Developer";
+
+        function typingeffect() {
+            setInterval(run, 100);
+            function run() {
+                if (store.length > chal) {
+                    word = word + store[chal];
+                    document.getElementById('typing').innerHTML = word;
+                    chal++;
+                }
+
+                // else if (store.length > chal) {
+
+                //     word = word - store[chal];
+                //     document.getElementById('typing').innerHTML = word;
+                //     chal--;
+
+                // }
+
+                else {
+                    word = "";
+                    chal = 0;
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>
